@@ -17,6 +17,7 @@
 		BB5C8CB21E0AFD5800029D74 /* Call.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5C8CB11E0AFD5800029D74 /* Call.swift */; };
 		BB5C8CB61E0AFD7C00029D74 /* CallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5C8CB51E0AFD7C00029D74 /* CallManager.swift */; };
 		BB6E171E1E19572400A2AF91 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6E171D1E19572400A2AF91 /* Audio.swift */; };
+		DE4146FE1FA3F59D00FD5ECB /* ProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4146FD1FA3F59D00FD5ECB /* ProviderDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +46,7 @@
 		BB5C8CB11E0AFD5800029D74 /* Call.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Call.swift; sourceTree = "<group>"; };
 		BB5C8CB51E0AFD7C00029D74 /* CallManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallManager.swift; sourceTree = "<group>"; };
 		BB6E171D1E19572400A2AF91 /* Audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
+		DE4146FD1FA3F59D00FD5ECB /* ProviderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderDelegate.swift; sourceTree = "<group>"; };
 		DE8DB7BF1FA3031F00AD6E27 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,6 +148,7 @@
 			children = (
 				BB5C8CB11E0AFD5800029D74 /* Call.swift */,
 				BB5C8CB51E0AFD7C00029D74 /* CallManager.swift */,
+				DE4146FD1FA3F59D00FD5ECB /* ProviderDelegate.swift */,
 			);
 			path = CallManagement;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				BB5C8CA71E0AF37000029D74 /* NewCallViewController.swift in Sources */,
 				BB6E171E1E19572400A2AF91 /* Audio.swift in Sources */,
 				BB5C8C8F1E0AE13300029D74 /* AppDelegate.swift in Sources */,
+				DE4146FE1FA3F59D00FD5ECB /* ProviderDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
