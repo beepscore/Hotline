@@ -87,8 +87,8 @@
 		BB5C8C8D1E0AE13300029D74 /* Hotline */ = {
 			isa = PBXGroup;
 			children = (
+				DE8DB7C01FA30ACC00AD6E27 /* CallManagement */,
 				BB6E171C1E19571400A2AF91 /* Audio */,
-				BB5C8CB01E0AFD3D00029D74 /* Call Management */,
 				BB5C8CA21E0AE21F00029D74 /* App */,
 				BB5C8CA01E0AE1EB00029D74 /* UI */,
 				BB5C8CA11E0AE20000029D74 /* Supporting Files */,
@@ -133,21 +133,21 @@
 			name = "View Controllers";
 			sourceTree = "<group>";
 		};
-		BB5C8CB01E0AFD3D00029D74 /* Call Management */ = {
-			isa = PBXGroup;
-			children = (
-				BB5C8CB11E0AFD5800029D74 /* Call.swift */,
-				BB5C8CB51E0AFD7C00029D74 /* CallManager.swift */,
-			);
-			name = "Call Management";
-			sourceTree = "<group>";
-		};
 		BB6E171C1E19571400A2AF91 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
 				BB6E171D1E19572400A2AF91 /* Audio.swift */,
 			);
 			name = Audio;
+			sourceTree = "<group>";
+		};
+		DE8DB7C01FA30ACC00AD6E27 /* CallManagement */ = {
+			isa = PBXGroup;
+			children = (
+				BB5C8CB11E0AFD5800029D74 /* Call.swift */,
+				BB5C8CB51E0AFD7C00029D74 /* CallManager.swift */,
+			);
+			path = CallManagement;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
