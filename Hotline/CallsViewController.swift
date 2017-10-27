@@ -27,49 +27,49 @@ private let presentOutgoingCallViewControllerSegue = "PresentOutgoingCallViewCon
 private let callCellIdentifier = "CallCell"
 
 class CallsViewController: UITableViewController {
-  
-  var callManager: CallManager!
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    
-    callManager = AppDelegate.shared.callManager
-    
-    callManager.callsChangedHandler = { [weak self] in
-      guard let strongSelf = self else { return }
-      strongSelf.tableView.reloadData()
+
+    var callManager: CallManager!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        callManager = AppDelegate.shared.callManager
+
+        callManager.callsChangedHandler = { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.tableView.reloadData()
+        }
     }
-  }
-  
-  @IBAction private func unwindForNewCall(_ segue: UIStoryboardSegue) {
-  }
-  
+
+    @IBAction private func unwindForNewCall(_ segue: UIStoryboardSegue) {
+    }
+
 }
 
 // MARK: - UITableViewDataSource
 
 extension CallsViewController {
-  
-  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return callManager.calls.count
-  }
-  
-  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let call = callManager.calls[indexPath.row]
-    
-    let cell = tableView.dequeueReusableCell(withIdentifier: callCellIdentifier) as! CallTableViewCell
-    cell.callerHandle = call.handle
-    cell.callState = call.state
-    cell.incoming = !call.outgoing
-    
-    return cell
-  }
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return callManager.calls.count
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let call = callManager.calls[indexPath.row]
+
+        let cell = tableView.dequeueReusableCell(withIdentifier: callCellIdentifier) as! CallTableViewCell
+        cell.callerHandle = call.handle
+        cell.callState = call.state
+        cell.incoming = !call.outgoing
+
+        return cell
+    }
 }
 
 // MARK - UITableViewDelegate
 
 extension CallsViewController {
-  override func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
-    return "End"
-  }
+    override func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "End"
+    }
 }
