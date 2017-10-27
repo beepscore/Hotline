@@ -34,6 +34,32 @@ class ProviderDelegate: NSObject {
 
         return providerConfiguration
     }
+
+    func reportIncomingCall(uuid: UUID, handle: String, hasVideo: Bool = false, completion: ((NSError?) -> Void)?) {
+
+        // prepare update to send to system
+        let update = CXCallUpdate()
+        // add call metadata
+        update.remoteHandle = CXHandle(type: .phoneNumber, value: handle)
+        update.hasVideo = hasVideo
+
+        // use provider to notify system
+        provider.reportNewIncomingCall(with: uuid, update: update) { error in
+
+            // now we are inside reportNewIncomingCall's final argument, a completion block
+
+            if error == nil {
+                // no error, so add call
+                let call = Call(uuid: uuid, handle: handle)
+                self.callManager.add(call: call)
+            }
+
+            // execute "completion", the final argument that was passed to outer method reportIncomingCall
+            // execute if it isn't nil
+            completion?(error as NSError?)
+        }
+    }
+
 }
 
 extension ProviderDelegate: CXProviderDelegate {
