@@ -34,6 +34,7 @@ enum ConnectedState {
     case complete
 }
 
+/// represents a phone call
 class Call {
 
     let uuid: UUID
@@ -41,6 +42,8 @@ class Call {
     let handle: String
 
     var state: CallState = .ended {
+        // didSet is a property observer
+        // https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Properties.html
         didSet {
             stateChanged?()
         }
