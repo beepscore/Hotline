@@ -45,6 +45,7 @@
 		BB5C8CB11E0AFD5800029D74 /* Call.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Call.swift; sourceTree = "<group>"; };
 		BB5C8CB51E0AFD7C00029D74 /* CallManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallManager.swift; sourceTree = "<group>"; };
 		BB6E171D1E19572400A2AF91 /* Audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
+		DE8DB7BF1FA3031F00AD6E27 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +70,7 @@
 		BB5C8C821E0AE13300029D74 = {
 			isa = PBXGroup;
 			children = (
+				DE8DB7BF1FA3031F00AD6E27 /* README.md */,
 				BB5C8C8D1E0AE13300029D74 /* Hotline */,
 				BB5C8C8C1E0AE13300029D74 /* Products */,
 			);
