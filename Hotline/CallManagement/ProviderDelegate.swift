@@ -35,3 +35,16 @@ class ProviderDelegate: NSObject {
         return providerConfiguration
     }
 }
+
+extension ProviderDelegate: CXProviderDelegate {
+
+    func providerDidReset(_ provider: CXProvider) {
+        stopAudio()
+
+        for call in callManager.calls {
+            call.end()
+        }
+
+        callManager.removeAllCalls()
+    }
+}
