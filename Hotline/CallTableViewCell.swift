@@ -43,6 +43,7 @@ class CallTableViewCell: UITableViewCell {
   
   var incoming: Bool = false {
     didSet {
+      // statement uses image literals for incoming_arrow and outgoing_arrow
       iconImageView.image = incoming ? #imageLiteral(resourceName: "incoming_arrow") : #imageLiteral(resourceName: "outgoing_arrow")
     }
   }
