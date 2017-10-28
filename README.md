@@ -11,6 +11,11 @@ https://developer.apple.com/videos/play/wwdc2016/230/
 
 # Results
 
+## tutorial comments
+This tutorial only covers CallKit, not making VoIP calls.
+There is no VoIP backend in place, so all the calls are dummy operations.
+You won't be able to use the sample app to communicate between two phones.
+
 ## CallKit
 By adopting CallKit, your app will be able to:
 
