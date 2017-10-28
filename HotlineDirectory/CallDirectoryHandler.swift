@@ -31,12 +31,15 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
         context.completeRequest()
     }
 
+    // current Xcode 9 template includes addAllBlockingPhoneNumbers
+    // tutorial shows slightly different name addBlockingPhoneNumbers without "All"
     private func addAllBlockingPhoneNumbers(to context: CXCallDirectoryExtensionContext) {
         // Retrieve all phone numbers to block from data store. For optimal performance and memory usage when there are many phone numbers,
         // consider only loading a subset of numbers at a given time and using autorelease pool(s) to release objects allocated during each batch of numbers which are loaded.
         //
         // Numbers must be provided in numerically ascending order.
-        let allPhoneNumbers: [CXCallDirectoryPhoneNumber] = [ 1_408_555_5555, 1_800_555_5555 ]
+        // let allPhoneNumbers: [CXCallDirectoryPhoneNumber] = [ 1_408_555_5555, 1_800_555_5555 ]
+        let allPhoneNumbers: [CXCallDirectoryPhoneNumber] = [ 1234 ]
         for phoneNumber in allPhoneNumbers {
             context.addBlockingEntry(withNextSequentialPhoneNumber: phoneNumber)
         }
