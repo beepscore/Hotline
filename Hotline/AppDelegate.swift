@@ -27,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   var window: UIWindow?
   let callManager = CallManager()
+
+  lazy var providerDelegate: ProviderDelegate = ProviderDelegate(callManager: self.callManager)
   
   class var shared: AppDelegate {
     return UIApplication.shared.delegate as! AppDelegate
