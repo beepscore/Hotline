@@ -47,7 +47,7 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="mGv-fA-Q6M" firstAttribute="centerY" secondItem="u6e-Df-qFD" secondAttribute="centerY" id="12w-Mu-BCB"/>
-                                        <constraint firstItem="mGv-fA-Q6M" firstAttribute="leading" secondItem="u6e-Df-qFD" secondAttribute="trailing" constant="220" id="7rs-QH-xqA"/>
+                                        <constraint firstItem="mGv-fA-Q6M" firstAttribute="leading" secondItem="u6e-Df-qFD" secondAttribute="trailing" priority="500" constant="220" id="7rs-QH-xqA"/>
                                         <constraint firstItem="a6R-0h-YzP" firstAttribute="centerY" secondItem="Y3A-kJ-SFV" secondAttribute="centerY" id="LqB-BD-J1f"/>
                                         <constraint firstItem="mGv-fA-Q6M" firstAttribute="trailing" secondItem="Y3A-kJ-SFV" secondAttribute="trailingMargin" constant="-8" id="Wp2-1p-BLk"/>
                                         <constraint firstItem="u6e-Df-qFD" firstAttribute="leading" secondItem="a6R-0h-YzP" secondAttribute="trailing" constant="8" id="fho-l4-AOL"/>
