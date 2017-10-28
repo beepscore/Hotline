@@ -16,6 +16,12 @@ This tutorial only covers CallKit, not making VoIP calls.
 There is no VoIP backend in place, so all the calls are dummy operations.
 You won't be able to use the sample app to communicate between two phones.
 
+## Info.plist
+Sample project starter code has array Required background modes
+
+    Item 0 App plays audio or streams audio/video using AirPlay
+    Item 1 App provides Voice over IP services
+
 ## CallKit
 By adopting CallKit, your app will be able to:
 
