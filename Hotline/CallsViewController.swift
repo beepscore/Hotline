@@ -45,14 +45,19 @@ class CallsViewController: UITableViewController {
 
         let newCallController = segue.source as! NewCallViewController
         guard let handle = newCallController.handle else { return }
+        let incoming = newCallController.incoming
         let videoEnabled = newCallController.videoEnabled
 
-        // use a background task in case user suspends app before action completes
-        let backgroundTaskIdentifier = UIApplication.shared.beginBackgroundTask(expirationHandler: nil)
-        DispatchQueue.main.asyncAfter(wallDeadline: DispatchWallTime.now() + 1.5) {
-            AppDelegate.shared.displayIncomingCall(uuid: UUID(), handle: handle, hasVideo: videoEnabled) { _ in
-                UIApplication.shared.endBackgroundTask(backgroundTaskIdentifier)
+        if incoming {
+            // use a background task in case user suspends app before action completes
+            let backgroundTaskIdentifier = UIApplication.shared.beginBackgroundTask(expirationHandler: nil)
+            DispatchQueue.main.asyncAfter(wallDeadline: DispatchWallTime.now() + 1.5) {
+                AppDelegate.shared.displayIncomingCall(uuid: UUID(), handle: handle, hasVideo: videoEnabled) { _ in
+                    UIApplication.shared.endBackgroundTask(backgroundTaskIdentifier)
+                }
             }
+        } else {
+            callManager.startCall(handle: handle, videoEnabled: videoEnabled)
         }
     }
 
