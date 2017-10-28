@@ -29,6 +29,8 @@ class CallManager {
 
     private(set) var calls = [Call]()
 
+    private let callController = CXCallController()
+    
     func callWithUUID(uuid: UUID) -> Call? {
         guard let index = calls.index(where: { $0.uuid == uuid }) else {
             return nil
