@@ -55,6 +55,14 @@ class CallManager {
         requestTransaction(transaction)
     }
 
+    func setHeld(call: Call, onHold: Bool) {
+        let setHeldCallAction = CXSetHeldCallAction(call: call.uuid, onHold: onHold)
+        let transaction = CXTransaction()
+        transaction.addAction(setHeldCallAction)
+
+        requestTransaction(transaction)
+    }
+
     private func requestTransaction(_ transaction: CXTransaction) {
         callController.request(transaction) { error in
             if let error = error {
