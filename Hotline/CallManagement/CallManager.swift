@@ -30,7 +30,7 @@ class CallManager {
     private(set) var calls = [Call]()
 
     private let callController = CXCallController()
-    
+
     func callWithUUID(uuid: UUID) -> Call? {
         guard let index = calls.index(where: { $0.uuid == uuid }) else {
             return nil
@@ -45,6 +45,24 @@ class CallManager {
             strongSelf.callsChangedHandler?()
         }
         callsChangedHandler?()
+    }
+
+    func end(call: Call) {
+        let endCallAction = CXEndCallAction(call: call.uuid)
+        // wrap action in a transaction
+        let transaction = CXTransaction(action: endCallAction)
+        // send transaction to system
+        requestTransaction(transaction)
+    }
+
+    private func requestTransaction(_ transaction: CXTransaction) {
+        callController.request(transaction) { error in
+            if let error = error {
+                print("Error requesting transaction: \(error)")
+            } else {
+                print("Requested transaction successfully")
+            }
+        }
     }
 
     func remove(call: Call) {
