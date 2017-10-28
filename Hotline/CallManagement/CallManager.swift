@@ -47,6 +47,17 @@ class CallManager {
         callsChangedHandler?()
     }
 
+    func startCall(handle: String, videoEnabled: Bool) {
+        let handle = CXHandle(type: .phoneNumber, value: handle)
+        // generate a new UUID, use it to instantiate startCallAction
+        let startCallAction = CXStartCallAction(call: UUID(), handle: handle)
+
+        startCallAction.isVideo = videoEnabled
+        let transaction = CXTransaction(action: startCallAction)
+
+        requestTransaction(transaction)
+    }
+
     func end(call: Call) {
         let endCallAction = CXEndCallAction(call: call.uuid)
         // wrap action in a transaction
