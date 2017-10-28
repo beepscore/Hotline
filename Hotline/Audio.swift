@@ -22,21 +22,24 @@
 
 import AVFoundation
 
+/// module-wide method
 func configureAudioSession() {
-  print("Configuring audio session")
-  let session = AVAudioSession.sharedInstance()
-  do {
-    try session.setCategory(AVAudioSessionCategoryPlayAndRecord)
-    try session.setMode(AVAudioSessionModeVoiceChat)
-  } catch (let error) {
-    print("Error while configuring audio session: \(error)")
-  }
+    print("Configuring audio session")
+    let session = AVAudioSession.sharedInstance()
+    do {
+        try session.setCategory(AVAudioSessionCategoryPlayAndRecord)
+        try session.setMode(AVAudioSessionModeVoiceChat)
+    } catch (let error) {
+        print("Error while configuring audio session: \(error)")
+    }
 }
 
+/// module-wide method
 func startAudio() {
-  print("Starting audio")
+    print("Starting audio")
 }
 
+/// module-wide method
 func stopAudio() {
-  print("Stopping audio")
+    print("Stopping audio")
 }
