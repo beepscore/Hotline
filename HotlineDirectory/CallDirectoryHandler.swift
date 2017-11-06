@@ -70,7 +70,7 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
         // Numbers must be provided in numerically ascending order.
         // let allPhoneNumbers: [CXCallDirectoryPhoneNumber] = [ 1_877_555_5555, 1_888_555_5555 ]
         // let labels = [ "Telemarketer", "Local business" ]
-        let phoneNumbers: [CXCallDirectoryPhoneNumber] = [ 1111 ]
+        let allPhoneNumbers: [CXCallDirectoryPhoneNumber] = [ 1111 ]
         let labels = [ "RW Tutorial Team" ]
 
         for (phoneNumber, label) in zip(allPhoneNumbers, labels) {
